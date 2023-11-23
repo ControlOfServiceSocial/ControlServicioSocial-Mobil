@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlServicioSocialMAUI.Views.CertificateViews.PRegistrarCertificado"
+             Title="PRegistrarCertificado"
+             NavigationPage.HasNavigationBar="False"
+             Shell.TabBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+           ColumnDefinitions="Auto,*,Auto"
+           Padding="15,0"
+           RowSpacing="7">
+                <Label Text="Registrar Certificado" 
+                FontAttributes="Bold"
+                TextColor="#383b67" 
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Margin="0,15,0,0"
+                VerticalTextAlignment="Center"
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HasShadow="False" BackgroundColor="Transparent" BorderColor="#f1f3fa" CornerRadius="20" Margin="0,20">
+                    <VerticalStackLayout Spacing="10">
+                        <StackLayout Padding="20" >
+                            <Label Text="Selecciona el Documento del Certificado" FontSize="Medium" Margin="5" />
+                            <Button x:Name="btnSeleccionarArchivo" 
+                         Clicked="btnSeleccionarArchivo_Clicked"
+                         Text="Seleccionar archivo"
+                         BackgroundColor="#8C4975"
+                         TextColor="White"
+                         FontSize="Medium"
+                         WidthRequest="320"
+                         Margin="0,10,0,0"
+                         >
+                                <Button.FontFamily>
+                                    <OnPlatform x:TypeArguments="x:String">
+                                        <On Platform="Android" Value="sans-serif-medium" />
+                                        <On Platform="iOS" Value="HelveticaNeue-Medium" />
+                                    </OnPlatform>
+                                </Button.FontFamily>
+                            </Button>
+                            <Label x:Name="lblRutaArchivo" FontSize="Small" Text="Ningún archivo seleccionado" Margin="5" />
+                            <Label Text="Título del Certificado" FontSize="Medium" Margin="5" />
+                            <Entry x:Name="txtTitulo" FontSize="Medium" Keyboard="Text" Placeholder="Título del Certificado" />
+                            <Label Text="Carga Horaria" FontSize="Medium" Margin="5" />
+                            <Entry x:Name="txtCargaHoraria" FontSize="Medium" Keyboard="Numeric" Placeholder="Carga Horaria"  />
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+                <Button x:Name="btnEnviarCertificado"
+                 Clicked="btnEnviarCertificado_Clicked"
+                 Text="Enviar certificado"
+                 BackgroundColor="#8C4975"
+                 TextColor="White"
+                 FontSize="Medium"
+                 WidthRequest="320"
+                 Margin="0,10,0,0"
+                 Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Button.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <On Platform="Android" Value="sans-serif-medium" />
+                            <On Platform="iOS" Value="HelveticaNeue-Medium" />
+                        </OnPlatform>
+                    </Button.FontFamily>
+                </Button>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

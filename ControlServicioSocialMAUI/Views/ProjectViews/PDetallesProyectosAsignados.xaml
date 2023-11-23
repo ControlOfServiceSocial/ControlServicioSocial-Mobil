@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlServicioSocialMAUI.Views.ProjectViews.PDetallesProyectosAsignados"
+             Title="PDetallesProyectosAsignados">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="Auto,*,Auto,Auto">
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HasShadow="False" BackgroundColor="Transparent" BorderColor="#f1f3fa" CornerRadius="20" Margin="0,20">
+                    <VerticalStackLayout Spacing="10">
+                        <Label HorizontalTextAlignment="Center" Text="{Binding UbicacionProyecto}" TextColor="#8e99c2"/>
+                        <Label Text="{Binding NombreProyecto}" FontSize="17" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                        <Image Source="{Binding ImagenProyecto }" HeightRequest="350" WidthRequest="350">
+                        </Image>
+                        <Label Text="{Binding DescripcionProyecto}"  FontSize="15"/>
+                        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,Auto" HorizontalOptions="Center"  >
+                            <VerticalStackLayout Grid.Row="0" Grid.Column="0" Margin="20">
+                                <Label HorizontalTextAlignment="Center" Text="Inicio" TextColor="#8e99c2"/>
+                                <Label HorizontalTextAlignment="Center" Text="{Binding FechaFinProyecto,StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold" TextColor="#38456e"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="0" Grid.Column="1" Margin="20">
+                                <Label HorizontalTextAlignment="Center" Text="Fin" TextColor="#8e99c2"/>
+                                <Label HorizontalTextAlignment="Center" Text="{Binding FechaFinProyecto,StringFormat='{0:dd/MM/yyyy}'}" FontAttributes="Bold" TextColor="#38456e"/>
+                            </VerticalStackLayout>
+                            <VerticalStackLayout Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="2" Margin="20">
+                                <Label HorizontalTextAlignment="Center" Text="Lugar" TextColor="#8e99c2"/>
+                                <Label HorizontalTextAlignment="Center" Text="{Binding UbicacionProyecto}" FontAttributes="Bold" TextColor="#38456e"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+                <Button x:Name="btnIniciar"
+                        Clicked="btnIniciar_Clicked"
+                        Text="Iniciar"
+                        BackgroundColor="#8C4975"
+                        TextColor="White"
+                        FontSize="Medium"
+                        WidthRequest="320"
+                        Margin="0,10,0,0"
+                        Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                </Button>
+                <Button x:Name="btnFinalizar"
+                        Clicked="btnFinalizar_Clicked"
+                        Text="Finalizar"
+                        BackgroundColor="#8C4975"
+                        TextColor="White"
+                        FontSize="Medium"
+                        WidthRequest="320"
+                        Margin="0,10,0,10"
+                        Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                </Button>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

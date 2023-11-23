@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlServicioSocialMAUI.Views.PCertificados"
+             Title="PCertificados">
+    <NavigationPage.HasNavigationBar>
+        <OnIdiom x:TypeArguments="x:Boolean">
+            <OnIdiom.Phone>false</OnIdiom.Phone>
+            <OnIdiom.Tablet>false</OnIdiom.Tablet>
+            <OnIdiom.Desktop>false</OnIdiom.Desktop>
+        </OnIdiom>
+    </NavigationPage.HasNavigationBar>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" Padding="15,0" RowSpacing="7">
+                <Button x:Name="btnCargarCertificado"
+                     Clicked="btnCargarCertificado_Clicked"
+                     Text="Cargar certificado"
+                     BackgroundColor="#8C4975"
+                     TextColor="White"
+                     FontSize="Medium"
+                     WidthRequest="320"
+                     Margin="0,10,0,0"
+                     Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                </Button>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlServicioSocialMAUI.Views.ProjectViews.PProyectosAsignados"
+             Title="PProyectosAsignados"
+             NavigationPage.HasNavigationBar="False"
+             Shell.TabBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid RowDefinitions="Auto,*" ColumnDefinitions="*,*" Padding="15,0" RowSpacing="7">
+                <Label Text="Proyectos Asignados" 
+                       FontAttributes="Bold"
+                       TextColor="#383b67" 
+                       FontSize="Medium"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,15,0,0"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <CollectionView x:Name="cvProyectosAsignados" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" SelectionMode="Single" SelectionChanged="cvProyectosAsignados_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Frame Grid.Column="0" Grid.ColumnSpan="2" HasShadow="False" BackgroundColor="Transparent" BorderColor="#f1f3fa" CornerRadius="20" Margin="0,20">
+                                    <VerticalStackLayout Spacing="10">
+                                        <Label Text="{Binding UbicacionProyecto}" TextColor="#8d9bc8"/>
+                                        <Image x:Name="imgProyecto" Source="{Binding ImagenProyecto}" HeightRequest="350" WidthRequest="350">
+                                        </Image>
+                                        <Label Text="{Binding NombreProyecto}" 
+                                            FontAttributes="Bold"
+                                            TextColor="#383b67" 
+                                            FontSize="17"/>
+                                        <Label  Text="{Binding DescripcionProyecto}"
+                                            TextColor="#8d92b9" 
+                                            FontSize="15"/>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
